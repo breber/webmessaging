@@ -1,0 +1,107 @@
+html,body {
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	font-family: Arial, helvetica, verdana, sans-serif;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.topBar {
+	text-decoration: none;
+	color: white;
+	background: black;
+	padding: 5px 5px;
+}
+
+.topBar a:link, .topBar a:visited, .topBar a:active {
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+}
+
+.topBar a:hover {
+	text-decoration: underline;
+	color: white;
+	cursor: pointer;
+}
+
+.table {
+	width: 100%;
+}
+
+.containermessaging {
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+}
+
+.imgcenter {
+	margin-top: 20px;
+	display: block;
+}
+
+.offset {
+	position: absolute;
+	top: 0px;
+	padding-top: 30px;
+	padding-bottom: 5px;
+}
+
+.right {
+	float: right;
+}
+
+button {
+	background: transparent;
+	border: none;
+}
+
+.gwt-TextBox {
+	margin: 10px !important;
+}
+
+.gwt-DialogBox td {
+	padding: 0px;
+}
+
+.gwt-DialogBox .dialogContent {
+	margin: 10px;
+}
+
+.pagerClass {
+	width: auto;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.scroll {
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.margin-tb {
+	margin-top: -2px !important;
+	margin-bottom: 10px !important;
+}
+
+.page {
+    display: block;
+    position:absolute;
+    height:auto;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+    margin-top:60px;
+    margin-bottom:20px;
+}
+

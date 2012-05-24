@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="gwt:property" content="locale=en_US">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="css/site.css">
+
+    <title>Messaging</title>
+
+    <script type="text/javascript" src="http://brianreber.com/js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="messaging/messaging.nocache.js"></script>
+    <script type="text/javascript" src="js/analytics.js"></script>
+    <script type="text/javascript" src="js/md5.js"></script>
+    
+    <script type="text/javascript">
+    	function sendHtml5Notification(obj) {
+			if (window.webkitNotifications.checkPermission() == 0) {
+				var popup = window.webkitNotifications.createNotification(obj.iconUrl, obj.title, obj.text);
+                popup.ondisplay = function(event) {
+                    setTimeout(function() {
+                        event.currentTarget.cancel();
+                    }, 5 * 1000);
+                }
+                popup.show();
+			}
+		};
+    </script>
+    
+  </head>
+
+  <body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="/">Messaging</a>
+				<ul class="nav">
+					<li>
+						<a id="newConversation" href="javascript:void(0);">New Conversation</a>
+					</li>
+					<li>
+						<a id="enableHtml5Nofif" href="javascript:void(0);">Enable HTML5 Notifications</a>
+					</li>
+				</ul>
+				<p class="navbar-text pull-right" id="username"></p>
+			</div>
+		</div>
+	</div>
+  	<iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled in order for this application to display correctly.
+      </div>
+    </noscript>
+  </body>
+</html>

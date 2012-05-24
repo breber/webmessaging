@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<datastore-indexes autoGenerate="true">
+	<datastore-index kind="SmsOutgoingMessage" ancestor="false" source="manual">
+		<property name="emailAddress" direction="asc" />
+		<property name="recipient" direction="asc"/>
+		<property name="messageDate" direction="desc" />
+	</datastore-index>
+	<datastore-index kind="SmsIncomingMessage" ancestor="false" source="manual">
+        <property name="emailAddress" direction="asc"/>
+        <property name="sender" direction="asc"/>
+        <property name="messageDate" direction="desc"/>
+    </datastore-index>
+	<datastore-index kind="MmsIncomingMessage" ancestor="false" source="manual">
+		<property name="emailAddress" direction="asc" />
+		<property name="recipient" direction="asc" />
+		<property name="messageDate" direction="desc" />
+	</datastore-index>
+    <datastore-index kind="IncomingOutgoingMessage" ancestor="false" source="manual">
+        <property name="emailAddress" direction="asc"/>
+        <property name="messageDate" direction="desc"/>
+    </datastore-index>
+</datastore-indexes>

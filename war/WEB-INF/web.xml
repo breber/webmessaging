@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+	<!-- RequestFactory Servlet -->
+	<servlet>
+		<servlet-name>requestFactoryServlet</servlet-name>
+		<servlet-class>com.google.web.bindery.requestfactory.server.RequestFactoryServlet</servlet-class>
+		<init-param>
+			<param-name>symbolMapsDirectory</param-name>
+			<param-value>WEB-INF/classes/symbolMaps/</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>requestFactoryServlet</servlet-name>
+		<url-pattern>/gwtRequest</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- Android C2DM servlet -->
+	<servlet>
+		<servlet-name>C2DMServlet</servlet-name>
+		<servlet-class>com.google.android.c2dm.server.C2DMRetryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>C2DMServlet</servlet-name>
+		<url-pattern>/tasks/c2dm</url-pattern>
+	</servlet-mapping>
+
+	<!-- Get a Blob upload URL -->
+	<servlet>
+		<servlet-name>GetBlobUrl</servlet-name>
+		<servlet-class>org.reber.messaging.GetBlobUrl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetBlobUrl</servlet-name>
+		<url-pattern>/getbloburl</url-pattern>
+	</servlet-mapping>
+
+	<!-- Upload a blob to the Blobstore -->
+	<servlet>
+		<servlet-name>Upload</servlet-name>
+		<servlet-class>org.reber.messaging.Upload</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Upload</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+
+	<!-- Serve a Blob from the Blobstore -->
+	<servlet>
+		<servlet-name>Serve</servlet-name>
+		<servlet-class>org.reber.messaging.Serve</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Serve</servlet-name>
+		<url-pattern>/serve</url-pattern>
+	</servlet-mapping>
+
+	<!-- Start a request for an OAuthToken -->
+	<servlet>
+		<servlet-name>FetchAccessToken</servlet-name>
+		<servlet-class>org.reber.messaging.FetcherServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FetchAccessToken</servlet-name>
+		<url-pattern>/FetchAccessToken</url-pattern>
+	</servlet-mapping>
+
+	<!-- Callback servlet for updating the token to a valid usable token -->
+	<servlet>
+		<servlet-name>UpgradeToken</servlet-name>
+		<servlet-class>org.reber.messaging.RequestTokenCallbackServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpgradeToken</servlet-name>
+		<url-pattern>/UpgradeToken</url-pattern>
+	</servlet-mapping>
+
+	<!-- Get information about the status of the logged in user's OAuth -->
+	<servlet>
+		<servlet-name>GetOAuthAuthorization</servlet-name>
+		<servlet-class>org.reber.messaging.GetOAuthAuthorization</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetOAuthAuthorization</servlet-name>
+		<url-pattern>/getauthorized</url-pattern>
+	</servlet-mapping>
+
+	<!-- Get a token from the Channel API for browser push notifications -->
+	<servlet>
+		<servlet-name>GetToken</servlet-name>
+		<servlet-class>org.reber.messaging.GetChannelToken</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetToken</servlet-name>
+		<url-pattern>/getToken</url-pattern>
+	</servlet-mapping>
+
+	<!-- Require the user be logged in to do anything on this AppEngine server -->
+	<security-constraint>
+		<web-resource-collection>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>*</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+</web-app>

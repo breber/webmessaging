@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 0.0.999//EN"
+ "http://google-web-toolkit.googlecode.com/svn/tags/0.0.999/distro-source/core/src/gwt-module.dtd">
+<module rename-to='messaging'>
+	<!-- Inherit the core Web Toolkit stuff. -->
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name='com.google.gwt.user.theme.chrome.Chrome' />
+	<inherits name="com.google.gwt.http.HTTP" />
+
+	<!-- Other module inherits -->
+	<inherits name='com.google.web.bindery.requestfactory.RequestFactory' />
+	<!-- <inherits name='com.google.gwt.appengine.channel.Channel' /> -->
+
+	<!-- Specify the app entry point class. -->
+	<entry-point class='com.brianreber.messaging.client.Messaging' />
+
+	<set-configuration-property name='UiBinder.useSafeHtmlTemplates' value='true' />
+
+	<!-- Specify the paths for translatable code -->
+	<source path='client' />
+	<source path='shared' />
+</module>

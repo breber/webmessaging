@@ -1,0 +1,22 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:c='urn:import:com.google.gwt.user.cellview.client'>
+
+	<g:HTMLPanel styleName="center">
+		<g:HTMLPanel ui:field="noContents" visible="true">
+			<h3>No conversation selected</h3>
+		</g:HTMLPanel>
+		<g:HTMLPanel ui:field="contents" visible="false">
+			<h4>
+				<g:Label ui:field="withLabel" />
+			</h4>
+			<g:FlowPanel width="100%">
+				<g:TextBox ui:field="messageText" focus="true" maxLength="160"
+					width="70%" />
+				<g:Button ui:field="sendButton" text="Send" />
+			</g:FlowPanel>
+			<c:CellList ui:field="table" />
+			<c:SimplePager ui:field='pager' location="CENTER"
+				width="" styleName="center" />
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,14 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:c='urn:import:com.google.gwt.user.cellview.client'
+	xmlns:t='urn:import:com.brianreber.messaging.client'>
+
+	<g:HTMLPanel styleName="container page">
+		<div class="span4 scroll">
+			<t:ConversationListTable ui:field="conversationListTable" styleName="center" />
+		</div>
+		<div class="span6 scroll">
+			<t:ConversationWidget ui:field="conversationTable" width="100%" />
+		</div>
+	</g:HTMLPanel>
+
+</ui:UiBinder>
